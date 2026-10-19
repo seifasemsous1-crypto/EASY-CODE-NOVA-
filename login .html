@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Easy Code Nova</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="top-logo">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-code"></i>
+            <span>Easy Code <b>Nova</b></span>
+        </a>
+    </header>
+
+    <main class="login-page">
+
+        <!-- LEFT SIDE -->
+        <section class="welcome-section">
+
+            <div class="welcome-badge">
+                <i class="fa-solid fa-star"></i>
+                Welcome Back
+            </div>
+
+            <h1>
+                Continue Your
+                <span>Coding Journey</span>
+            </h1>
+
+            <p class="welcome-description">
+                Login to your account and get access to
+                courses, projects, and more.
+            </p>
+
+            <div class="benefits">
+
+                <div class="benefit">
+                    <i class="fa-solid fa-rocket"></i>
+                    <div>
+                        <h3>Learn from Experts</h3>
+                        <p>Practical and beginner-friendly courses.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <h3>Build Real Projects</h3>
+                        <p>Turn your ideas into real applications.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <i class="fa-solid fa-users"></i>
+                    <div>
+                        <h3>Join Community</h3>
+                        <p>Get support and grow together.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tagline">
+                Better Skills,
+                <span>Brighter Future.</span>
+            </div>
+
+        </section>
+
+        <!-- RIGHT SIDE -->
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="card-logo">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h2>Easy Code <span>Nova</span></h2>
+
+                <p class="card-description">
+                    Welcome back! Please login to your account.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="text"
+                            id="email"
+                            placeholder="Email or Username"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            required
+                            minlength="6"
+                        >
+
+                        
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <div class="form-options">
+
+                        <label class="remember">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot password?
+                        </a>
+
+                    </div>
+                    <button><a  class="login-button" href="basi.html">
+                    
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Login
+                    </a></button>
+
+                    <p id="message" class="message" role="status"></p>
+
+                </form>
+
+                <div class="separator">
+                    <span></span>
+                    <p>or</p>
+                    <span></span>
+                </div>
+
+                <button type="button" class="google-button" id="googleLogin">
+                    <i class="fa-brands fa-google"></i>
+                    Continue with Google
+                </button>
+
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="signup.html">Sign up</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

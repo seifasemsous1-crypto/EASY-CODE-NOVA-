@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Code Nova | HTML Course</title>
+
+<style>
+:root {
+    --background: #030c1d;
+    --card-background: rgba(3, 17, 38, 0.85);
+    --blue: #1768ff;
+    --light-blue: #16b7ff;
+    --purple: #a33cff;
+    --white: #f5f7ff;
+    --muted: #b5c9e8;
+    --border: rgba(49, 119, 255, 0.55);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(ellipse at top left, #0b1e43, transparent 45%), var(--background);
+    color: var(--white);
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.topbar {
+    min-height: 76px;
+    background: var(--card-background);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 28px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(16px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 20px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: white;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    border-radius: 13px;
+    box-shadow: 0 0 22px #1768ff55;
+}
+
+.brand span:last-child {
+    color: var(--light-blue);
+}
+
+.search {
+    width: min(400px, 40%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: #07152b;
+    border: 1px solid var(--border);
+    padding: 12px 15px;
+    border-radius: 12px;
+}
+
+.search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: var(--white);
+    background: transparent;
+}
+
+.search input::placeholder {
+    color: var(--muted);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: #102b54;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+.user strong {
+    display: block;
+    font-size: 12px;
+}
+
+.user small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 270px;
+    gap: 20px;
+    padding: 22px;
+    align-items: start;
+}
+
+.sidebar, .rightbar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 95px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 12px;
+    margin-bottom: 4px;
+    color: var(--muted);
+    border-radius: 11px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: #1768ff20;
+    color: var(--light-blue);
+    box-shadow: inset 3px 0 var(--blue);
+}
+
+.ico {
+    width: 22px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.promo {
+    margin-top: 20px;
+    padding: 20px 14px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #07152b, #122c59);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.promo-art {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.promo h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.promo p {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.primary {
+    background: linear-gradient(100deg, var(--blue), var(--purple));
+    color: white;
+    border: 1px solid #6495ff66;
+    padding: 11px 15px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.primary:hover {
+    box-shadow: 0 0 20px #1768ff66;
+    transform: translateY(-1px);
+}
+
+.promo .primary {
+    background: var(--blue);
+    width: 100%;
+}
+
+.main {
+    min-width: 0;
+}
+
+.crumb {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 17px;
+}
+
+.crumb span {
+    margin: 0 7px;
+    color: var(--light-blue);
+}
+
+.course-card {
+    display: grid;
+    grid-template-columns: 85px minmax(0, 1fr);
+    gap: 20px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 17px;
+    box-shadow: 0 8px 35px #00000022;
+    backdrop-filter: blur(12px);
+}
+
+.html-logo {
+    width: 78px;
+    height: 95px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #ff9b67, #f05242);
+    color: white;
+    text-align: center;
+    clip-path: polygon(10% 0, 90% 0, 82% 88%, 50% 100%, 18% 88%);
+}
+
+.html-logo small {
+    display: block;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.html-logo strong {
+    font-size: 31px;
+}
+
+.course-info {
+    min-width: 0;
+}
+
+.pill {
+    display: inline-block;
+    background: #1768ff22;
+    color: var(--light-blue);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.lesson-count {
+    float: right;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.course-info h1 {
+    font-size: clamp(20px, 2vw, 27px);
+    margin: 15px 0 9px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.course-info p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.progress-box {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    margin-top: 2px;
+}
+
+.progress-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.progress-line {
+    height: 7px;
+    border-radius: 20px;
+    background: #102341;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--blue), var(--light-blue), var(--purple));
+    box-shadow: 0 0 12px #1768ff88;
+    transition: width .3s;
+}
+
+.progress-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 9px 0 14px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.lesson-panel {
+    margin-top: 20px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    padding: 13px 15px 0;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+}
+
+.tab {
+    flex-shrink: 0;
+    padding: 12px;
+    background: transparent;
+    color: var(--muted);
+    border: 0;
+    border-bottom: 2px solid transparent;
+    font-size: 11px;
+}
+
+.tab.active {
+    color: var(--light-blue);
+    border-bottom-color: var(--light-blue);
+    font-weight: 700;
+}
+
+.lesson-body {
+    padding: 23px;
+    min-width: 0;
+}
+
+.lesson-body h2 {
+    font-size: 20px;
+    margin-bottom: 13px;
+    line-height: 1.4;
+}
+
+.lesson-body > p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 17px;
+}
+
+.example-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.code-box, .preview-box {
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.box-head {
+    min-height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #07152b;
+    border-bottom: 1px solid var(--border);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.copy-btn {
+    border: 1px solid var(--border);
+    background: #0a1d39;
+    color: var(--light-blue);
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 10px;
+}
+
+.copy-btn:hover {
+    background: var(--blue);
+    color: white;
+}
+
+.code {
+    padding: 16px;
+    min-height: 220px;
+    max-height: 370px;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background: #020817;
+    color: #a8d8ff;
+    font-family: Consolas, monospace;
+    font-size: 11px;
+    line-height: 1.85;
+}
+
+.browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #07152b;
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff6b6b;
+}
+
+.dot:nth-child(2) {
+    background: #ffca58;
+}
+
+.dot:nth-child(3) {
+    background: #41c99b;
+}
+
+.address {
+    margin-left: 8px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.preview-frame {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    display: block;
+    background: white;
+}
+
+.how {
+    background: #07152b;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 21px;
+}
+
+.how h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--light-blue);
+}
+
+.how ul {
+    padding-left: 20px;
+}
+
+.how li {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+    margin: 5px 0;
+}
+
+.code-area, .try-area, .notes-area {
+    display: none;
+}
+
+.editor {
+    width: 100%;
+    min-height: 280px;
+    padding: 15px;
+    background: #020817;
+    color: #a8d8ff;
+    border: 1px solid var(--border);
+    outline-color: var(--light-blue);
+    border-radius: 10px;
+    resize: vertical;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.editor-actions {
+    margin-top: 12px;
+}
+
+.preview-output {
+    margin-top: 15px;
+    min-height: 180px;
+    padding: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: #202020;
+    overflow: auto;
+}
+
+.preview-output iframe {
+    display: block;
+    width: 100%;
+    min-height: 240px;
+    border: 0;
+}
+
+.notes-area textarea {
+    width: 100%;
+    min-height: 220px;
+    resize: vertical;
+    padding: 14px;
+    background: #07152b;
+    color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline-color: var(--light-blue);
+    line-height: 1.8;
+}
+
+.notes-area textarea::placeholder {
+    color: var(--muted);
+}
+
+.right-card {
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 17px 13px;
+    min-width: 0;
+}
+
+.right-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.right-sub {
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 14px;
+}
+
+.lesson-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lesson {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 7px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    text-align: left;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.lesson:hover {
+    background: #1768ff12;
+    border-color: #1768ff33;
+}
+
+.lesson.active {
+    background: #1768ff20;
+    border-color: var(--border);
+    color: var(--light-blue);
+}
+
+.num {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: #0c2140;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.lesson.active .num {
+    background: var(--blue);
+    color: white;
+}
+
+.lesson-name {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.status {
+    color: #607b9f;
+}
+
+.status.done {
+    color: #16d9a0;
+}
+
+.quick-action {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.quick-action:hover {
+    color: var(--light-blue);
+}
+
+.quick-action span:nth-child(2) {
+    flex: 1;
+}
+
+.qicon {
+    color: var(--light-blue);
+    font-size: 17px;
+}
+
+.next-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 14px;
+    font-size: 11px;
+}
+
+.next-row span:nth-child(2) {
+    flex: 1;
+}
+
+.motivation {
+    text-align: center;
+    background: radial-gradient(circle at top, #172a59, transparent 70%), var(--card-background);
+    border: 1px solid var(--border);
+}
+
+.rocket {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.motivation h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.motivation p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.mountain {
+    margin-top: 10px;
+    color: var(--purple);
+    font-size: 23px;
+}
+
+@media (max-width: 1150px) {
+    .layout {
+        grid-template-columns: 175px minmax(0, 1fr);
+    }
+
+    .rightbar {
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .right-card:first-child {
+        grid-row: span 2;
+    }
+
+    .sidebar {
+        grid-row: 1 / span 2;
+    }
+}
+
+@media (max-width: 760px) {
+    .topbar {
+        flex-wrap: wrap;
+        padding: 13px;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .search {
+        order: 3;
+        width: 100%;
+    }
+
+    .layout {
+        display: flex;
+        flex-direction: column;
+        padding: 13px;
+        gap: 15px;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+    }
+
+    .sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3px;
+    }
+
+    .nav-item {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .promo {
+        display: none;
+    }
+
+    .main, .rightbar {
+        width: 100%;
+    }
+
+    .rightbar {
+        display: flex;
+    }
+
+    .course-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        padding: 15px;
+        gap: 13px;
+    }
+
+    .html-logo {
+        width: 60px;
+        height: 75px;
+    }
+
+    .html-logo small {
+        font-size: 11px;
+    }
+
+    .html-logo strong {
+        font-size: 24px;
+    }
+
+    .lesson-count {
+        float: none;
+        display: block;
+        margin-top: 8px;
+    }
+
+    .course-info h1 {
+        font-size: 21px;
+    }
+
+    .example-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-body {
+        padding: 15px;
+    }
+
+    .tabs {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .tab {
+        padding: 11px 8px;
+    }
+
+    .right-card:first-child {
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .course-card {
+        grid-template-columns: 1fr;
+    }
+
+    .html-logo {
+        width: 65px;
+        height: 72px;
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <div>Easy Code <span>Nova</span></div>
+    </div>
+
+    <label class="search">
+        <span style="font-size:22px">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search for lessons...">
+    </label>
+
+    <div class="user">
+        <div class="avatar">👨🏻‍💻</div>
+        <div>
+            <strong>Learner</strong>
+            <small>Easy Code Nova</small>
+        </div>
+    </div>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <nav>
+        <a href="basi.html"><div class="nav-item"><span class="ico">⌂</span>Dashboard</div></a>
+        <a href="#"><div class="nav-item active"><span class="ico">▣</span>Courses</div></a>
+        <a href="#"><div class="nav-item"><span class="ico">&lt;/&gt;</span>Projects</div></a>
+        <a href="#"><div class="nav-item"><span class="ico">▥</span>My Progress</div></a>
+        <a href="#"><div class="nav-item"><span class="ico">♧</span>Community</div></a>
+        <a href="#"><div class="nav-item"><span class="ico">▱</span>Resources</div></a>
+        <div class="nav-item"><span class="ico">⚙</span>Settings</div>
+    </nav>
+
+    <div class="promo">
+        <div class="promo-art">💻</div>
+        <h3>Keep Learning!</h3>
+        <p>Small steps every day lead to big results.</p>
+        <button class="primary" onclick="showLesson(0)">Start Learning ➜</button>
+    </div>
+</aside>
+
+<main class="main">
+    <div class="crumb">
+        Courses <span>›</span> HTML Course <span>›</span> Lesson <span id="crumbNum">1</span>
+    </div>
+
+    <section class="course-card">
+        <div class="html-logo">
+            <div><small>HTML</small><strong>5</strong></div>
+        </div>
+
+        <div class="course-info">
+            <span class="pill">HTML COURSE</span>
+            <span class="lesson-count">Lesson <span id="lessonNumber">1</span> of <span id="totalLessons">10</span></span>
+            <h1 id="courseHeading">Introduction to HTML</h1>
+            <p id="courseDescription">Learn the basics of HTML and create your first web page.</p>
+            <div class="meta">
+                <span>◷ Beginner Course</span>
+                <span>♧ Beginner</span>
+                <span>▣ 10 Lessons</span>
+            </div>
+        </div>
+
+        <div class="progress-box">
+            <div class="progress-title">♧ Your Progress</div>
+            <div class="progress-line">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-row">
+                <span id="completedText">0 of 10 lessons completed</span>
+                <span id="percentText">0%</span>
+            </div>
+            <button class="primary" id="completeBtn" onclick="toggleComplete()">✓ Mark as Completed</button>
+        </div>
+    </section>
+
+    <section class="lesson-panel">
+        <div class="tabs">
+            <button class="tab active" data-tab="learn" onclick="selectTab('learn')">▣ Learn</button>
+            <button class="tab" data-tab="code" onclick="selectTab('code')">&lt;/&gt; Code Example</button>
+            <button class="tab" data-tab="try" onclick="selectTab('try')">⊙ Try It Yourself</button>
+            <button class="tab" data-tab="notes" onclick="selectTab('notes')">▤ Notes</button>
+        </div>
+
+        <div class="lesson-body" id="learnArea">
+            <h2 id="lessonTitle">What is HTML?</h2>
+            <p id="learnDescription">HTML is the standard language for creating web pages.</p>
+
+            <div class="example-grid">
+                <div class="code-box">
+                    <div class="box-head">
+                        <span>HTML Example</span>
+                        <button class="copy-btn" onclick="copyCode()">▢ Copy Code</button>
+                    </div>
+                    <pre class="code" id="codeBlock"></pre>
+                </div>
+
+                <div class="preview-box">
+                    <div class="box-head">Live Preview ↗</div>
+                    <div class="browser-bar">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <div class="address">mywebsite.com</div>
+                    </div>
+                    <iframe class="preview-frame" id="livePreview" title="Lesson preview" sandbox=""></iframe>
+                </div>
+            </div>
+
+            <div class="how">
+                <h3>📘 How It Works</h3>
+                <ul id="explanationList"></ul>
+            </div>
+        </div>
+
+        <div class="lesson-body code-area" id="codeArea">
+            <h2>Code Example</h2>
+            <p>Copy this code into your index.html file in VS Code.</p>
+            <div class="code-box">
+                <div class="box-head">
+                    <span>HTML Code</span>
+                    <button class="copy-btn" onclick="copyCode()">▢ Copy Code</button>
+                </div>
+                <pre class="code" id="plainCode"></pre>
+            </div>
+        </div>
+
+        <div class="lesson-body try-area" id="tryArea">
+            <h2>Try It Yourself</h2>
+            <p>Edit the HTML below, then click Run Code to see your result.</p>
+            <textarea class="editor" id="editor" spellcheck="false"></textarea>
+            <div class="editor-actions">
+                <button class="primary" onclick="runCode()">▶ Run Code</button>
+            </div>
+            <div class="preview-output" id="tryOutput">Your result will appear here.</div>
+        </div>
+
+        <div class="lesson-body notes-area" id="notesArea">
+            <h2>My Notes</h2>
+            <p>Your notes are saved in this browser.</p>
+            <textarea id="notesInput" placeholder="Write your notes here..."></textarea>
+            <div style="margin-top:12px">
+                <button class="primary" onclick="saveNotes()">Save Notes</button>
+                <span id="notesStatus" style="margin-left:10px;color:#16d9a0;font-size:12px"></span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<aside class="rightbar">
+    <section class="right-card">
+        <div class="right-title"><span style="font-size:22px">♧</span>Course Content</div>
+        <div class="right-sub" id="totalLessonsText">10 Lessons</div>
+        <div class="lesson-list" id="lessonList"></div>
+    </section>
+
+    <section class="right-card">
+        <div class="right-title">♧ Quick Actions</div>
+        <div class="quick-action" onclick="copyCode()">
+            <span class="qicon">▣</span><span>Copy Current Example</span><span>›</span>
+        </div>
+        <div class="quick-action" onclick="selectTab('try')">
+            <span class="qicon">&lt;/&gt;</span><span>Practice HTML</span><span>›</span>
+        </div>
+        <div class="next-row">
+            <span class="qicon">➜</span><span>Next Lesson</span>
+            <button class="primary" onclick="nextLesson()">➜</button>
+        </div>
+    </section>
+
+    <section class="right-card motivation">
+        <div class="rocket">🚀</div>
+        <h3>You Can Do It!</h3>
+        <p>Every lesson gets you closer to your dreams. Keep learning and building!</p>
+        <div class="mountain">✦</div>
+    </section>
+</aside>
+</div>
+
+<script>
+const lessons = [
+{
+    title: "Introduction to HTML",
+    heading: "What is HTML?",
+    desc: "HTML creates the structure of web pages. Learn the basic tags used to build a website.",
+    code: `<h1>Hello, Easy Code Nova!</h1>
+<p>I am learning HTML.</p>
+<button>Start Learning</button>`,
+    points: [
+        "HTML stands for HyperText Markup Language.",
+        "HTML describes the structure of a web page.",
+        "HTML elements are written using tags."
+    ]
+},
+{
+    title: "HTML Document Structure",
+    heading: "HTML Document Structure",
+    desc: "Learn the basic structure of an HTML document.",
+    code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>My first web page.</p>
+</body>
+</html>`,
+    points: [
+        "DOCTYPE tells the browser to use HTML5.",
+        "The head contains page information and metadata.",
+        "The body contains the visible page content."
+    ]
+},
+{
+    title: "Headings and Paragraphs",
+    heading: "Headings and Paragraphs",
+    desc: "Use headings and paragraphs to organize text on a page.",
+    code: `<h1>Main Heading</h1>
+<h2>Second Heading</h2>
+<h3>Third Heading</h3>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>`,
+    points: [
+        "HTML has six heading levels, from h1 to h6.",
+        "Use h1 for the main page heading in most cases.",
+        "The p element creates a paragraph."
+    ]
+},
+{
+    title: "Links and Images",
+    heading: "Links and Images",
+    desc: "Add clickable links and images to your website.",
+    code: `<h2>Useful Website</h2>
+<a href="https://example.com">Visit Example</a>
+
+<h2>Example Image</h2>
+<img src="https://placehold.co/240x120" alt="Example image">`,
+    points: [
+        "The a element creates a link.",
+        "The href attribute sets the destination.",
+        "The img element displays an image.",
+        "The alt attribute provides a text description."
+    ]
+},
+{
+    title: "Lists: UL, OL and LI",
+    heading: "HTML Lists: UL, OL and LI",
+    desc: "Use ul for bullet lists, ol for numbered lists, and li for each list item.",
+    code: `<div class="list-card">
+  <h2>My Skills</h2>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <h2>My Learning Plan</h2>
+  <ol>
+    <li>Learn HTML</li>
+    <li>Learn CSS</li>
+    <li>Learn JavaScript</li>
+  </ol>
+</div>
+
+<style>
+.list-card {
+  font-family: Arial, sans-serif;
+  background: #f0f3ff;
+  padding: 18px;
+  border-radius: 12px;
+}
+h2 { color: #5267f5; }
+li { margin: 8px 0; }
+</style>`,
+    points: [
+        "ul means unordered list and normally shows bullet points.",
+        "ol means ordered list and normally shows numbers.",
+        "li represents one item inside a list.",
+        "Place li elements inside a ul or ol element.",
+        "You can style lists using CSS."
+    ]
+},
+{
+    title: "Input and Input Types",
+    heading: "HTML Input Types",
+    desc: "The input element lets users enter or choose information. Its type attribute controls the kind of field.",
+    code: `<form>
+  <label for="name">Name:</label>
+  <input id="name" type="text" placeholder="Your name">
+
+  <br><br>
+  <label for="email">Email:</label>
+  <input id="email" type="email" placeholder="you@example.com">
+
+  <br><br>
+  <label for="password">Password:</label>
+  <input id="password" type="password" placeholder="Password">
+
+  <br><br>
+  <label for="age">Age:</label>
+  <input id="age" type="number" min="1" max="100">
+
+  <br><br>
+  <label for="birthday">Birthday:</label>
+  <input id="birthday" type="date">
+
+  <p>Choose your level:</p>
+  <label><input type="radio" name="level"> Beginner</label>
+  <label><input type="radio" name="level"> Advanced</label>
+
+  <p><label><input type="checkbox"> I agree</label></p>
+  <label>Choose a file: <input type="file"></label>
+
+  <br><br>
+  <input type="submit" value="Register">
+  <input type="reset" value="Clear">
+</form>`,
+    points: [
+        "text: regular text.",
+        "password: hides typed characters.",
+        "email: an email field with browser validation.",
+        "number: numeric input; min and max can set limits.",
+        "date: choose a date.",
+        "checkbox: select or deselect an independent option.",
+        "radio: choose one option from a group with the same name.",
+        "file: choose a file from the device.",
+        "submit: submit a form.",
+        "reset: reset form fields.",
+        "Other types include tel, url, time, color, range, search and month."
+    ]
+},
+{
+    title: "Div and Page Sections",
+    heading: "The DIV Element",
+    desc: "Use div to group related elements into sections, cards, and layouts.",
+    code: `<div class="card">
+  <h2>Easy Code Nova</h2>
+  <p>Learn web development step by step.</p>
+  <button>Start Learning</button>
+</div>
+
+<style>
+.card {
+  font-family: Arial, sans-serif;
+  background: #eef0ff;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #d9ddff;
+}
+.card h2 { color: #5267f5; }
+.card button {
+  background: #5267f5;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 14px;
+}
+</style>`,
+    points: [
+        "div is a block-level container.",
+        "It groups related HTML elements together.",
+        "Use class or id to target a div with CSS.",
+        "CSS can set its background, spacing, border, and layout.",
+        "A div has no special visual appearance by default."
+    ]
+},
+{
+    title: "Navbar with HTML and CSS",
+    heading: "Build a Navigation Bar",
+    desc: "A navbar helps visitors move between pages or sections. Use nav, links, and CSS Flexbox to arrange it.",
+    code: `<nav class="navbar">
+  <a class="logo" href="#">Nova</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="home">
+  <h1>Welcome to Easy Code Nova</h1>
+  <p>Choose a page from the navigation bar.</p>
+</section>
+
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  background: #111b35;
+}
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+.nav-links a:hover { color: #aeb8ff; }
+section { padding: 28px 20px; }
+</style>`,
+    points: [
+        "nav identifies a navigation section.",
+        "a elements create the links in the navbar.",
+        "ul and li organize a group of navigation links.",
+        "display: flex arranges the logo and links in a row.",
+        "justify-content: space-between separates the logo from the links.",
+        "flex-wrap helps the navbar adapt to narrower screens.",
+        "Use href values to link to pages or page sections."
+    ]
+},
+{
+    title: "Buttons and Forms",
+    heading: "HTML Buttons and Forms",
+    desc: "Use forms, labels, inputs, and buttons to collect information.",
+    code: `<form>
+  <label for="username">Username:</label>
+  <input id="username" name="username" type="text"
+         placeholder="Enter username" required>
+
+  <br><br>
+
+  <button type="submit">Send</button>
+  <button type="reset">Clear</button>
+</form>`,
+    points: [
+        "form groups fields that can be submitted together.",
+        "label describes an input field.",
+        "for on a label should match the input id.",
+        "required makes a field necessary before normal form submission.",
+        "A submit button submits the form; a reset button resets fields."
+    ]
+},
+{
+    title: "Build Your First Web Page",
+    heading: "Your First Complete Web Page",
+    desc: "Combine a navbar, div sections, lists, and input fields into one simple page.",
+    code: `<nav class="navbar">
+  <strong>My Website</strong>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+</nav>
+
+<div class="container" id="about">
+  <h1>Welcome!</h1>
+  <p>This is my first complete page.</p>
+</div>
+
+<div class="container" id="skills">
+  <h2>My Skills</h2>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <input type="email" placeholder="Enter your email">
+  <button>Join Now</button>
+</div>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #111b35;
+  color: white;
+  padding: 16px;
+}
+.navbar ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+.container {
+  margin: 18px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #eef0ff;
+}
+li { margin: 7px 0; }
+</style>`,
+    points: [
+        "Use nav for the navigation area.",
+        "Use div to group sections of the page.",
+        "Use ul and li to list skills or links.",
+        "Use input types to collect different information.",
+        "Use CSS to make the page clear and responsive."
+    ]
+}
+];
+
+let current = 0;
+
+let completed = new Set(
+    JSON.parse(localStorage.getItem("novaCompletedLessons") || "[]")
+        .filter(i => Number.isInteger(i) && i >= 0 && i < lessons.length)
+);
+
+let currentCode = lessons[0].code;
+
+function makePreviewDocument(code) {
+    return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 12px;
+    color: #202020;
+}
+img { max-width: 100%; }
+input, button { max-width: 100%; margin: 2px; }
+</style>
+</head>
+<body>${code}</body>
+</html>`;
+}
+
+function renderLessons() {
+    const list = document.getElementById("lessonList");
+    list.innerHTML = "";
+
+    lessons.forEach((lesson, i) => {
+        const button = document.createElement("button");
+        button.className = "lesson" + (i === current ? " active" : "");
+
+        const num = document.createElement("span");
+        num.className = "num";
+        num.textContent = i + 1;
+
+        const name = document.createElement("span");
+        name.className = "lesson-name";
+        name.textContent = lesson.title;
+
+        const status = document.createElement("span");
+        status.className = "status" + (completed.has(i) ? " done" : "");
+        status.textContent = completed.has(i) ? "●" : "○";
+
+        button.append(num, name, status);
+        button.onclick = () => showLesson(i);
+        list.appendChild(button);
+    });
+
+    updateProgress();
+    applySearch();
+}
+
+function showLesson(i) {
+    current = i;
+    const lesson = lessons[i];
+    currentCode = lesson.code;
+
+    document.getElementById("lessonNumber").textContent = i + 1;
+    document.getElementById("crumbNum").textContent = i + 1;
+    document.getElementById("totalLessons").textContent = lessons.length;
+    document.getElementById("totalLessonsText").textContent = lessons.length + " Lessons";
+
+    document.getElementById("courseHeading").textContent = lesson.title;
+    document.getElementById("courseDescription").textContent = lesson.desc;
+    document.getElementById("lessonTitle").textContent = lesson.heading;
+    document.getElementById("learnDescription").textContent = lesson.desc;
+
+    document.getElementById("codeBlock").textContent = lesson.code;
+    document.getElementById("plainCode").textContent = lesson.code;
+    document.getElementById("editor").value = lesson.code;
+
+    document.getElementById("tryOutput").textContent =
+        "Click Run Code to see your result.";
+
+    document.getElementById("livePreview").srcdoc =
+        makePreviewDocument(lesson.code);
+
+    document.getElementById("completeBtn").textContent =
+        completed.has(i) ? "✓ Completed" : "✓ Mark as Completed";
+
+    const explanation = document.getElementById("explanationList");
+    explanation.innerHTML = "";
+
+    lesson.points.forEach(point => {
+        const li = document.createElement("li");
+        li.textContent = point;
+        explanation.appendChild(li);
+    });
+
+    renderLessons();
+    selectTab("learn");
+}
+
+function updateProgress() {
+    const count = completed.size;
+    const percent = Math.round(count / lessons.length * 100);
+
+    document.getElementById("progressFill").style.width = percent + "%";
+    document.getElementById("completedText").textContent =
+        `${count} of ${lessons.length} lessons completed`;
+    document.getElementById("percentText").textContent = percent + "%";
+}
+
+function toggleComplete() {
+    if (completed.has(current)) {
+        completed.delete(current);
+    } else {
+        completed.add(current);
+    }
+
+    localStorage.setItem(
+        "novaCompletedLessons",
+        JSON.stringify([...completed])
+    );
+
+    document.getElementById("completeBtn").textContent =
+        completed.has(current) ? "✓ Completed" : "✓ Mark as Completed";
+
+    renderLessons();
+}
+
+function nextLesson() {
+    showLesson((current + 1) % lessons.length);
+}
+
+function selectTab(tab) {
+    document.querySelectorAll(".tab").forEach(button => {
+        button.classList.toggle("active", button.dataset.tab === tab);
+    });
+
+    document.getElementById("learnArea").style.display =
+        tab === "learn" ? "block" : "none";
+
+    document.getElementById("codeArea").style.display =
+        tab === "code" ? "block" : "none";
+
+    document.getElementById("tryArea").style.display =
+        tab === "try" ? "block" : "none";
+
+    document.getElementById("notesArea").style.display =
+        tab === "notes" ? "block" : "none";
+
+    if (tab === "notes") {
+        document.getElementById("notesInput").value =
+            localStorage.getItem("novaNotes") || "";
+    }
+}
+
+async function copyCode() {
+    try {
+        await navigator.clipboard.writeText(currentCode);
+        alert("Code copied successfully!");
+    } catch (error) {
+        const area = document.createElement("textarea");
+        area.value = currentCode;
+        document.body.appendChild(area);
+        area.select();
+
+        const copied = document.execCommand("copy");
+        area.remove();
+
+        alert(copied
+            ? "Code copied successfully!"
+            : "Copy was blocked. Select and copy the code from the Code Example tab."
+        );
+    }
+}
+
+function runCode() {
+    const frame = document.createElement("iframe");
+
+    frame.title = "HTML practice preview";
+    frame.style.width = "100%";
+    frame.style.minHeight = "240px";
+    frame.style.border = "0";
+    frame.setAttribute("sandbox", "");
+
+    document.getElementById("tryOutput").replaceChildren(frame);
+
+    frame.srcdoc = makePreviewDocument(
+        document.getElementById("editor").value
+    );
+}
+
+function saveNotes() {
+    localStorage.setItem(
+        "novaNotes",
+        document.getElementById("notesInput").value
+    );
+
+    document.getElementById("notesStatus").textContent = "Saved ✓";
+}
+
+function applySearch() {
+    const query = document.getElementById("searchInput")
+        .value.toLowerCase().trim();
+
+    document.querySelectorAll(".lesson").forEach((element, i) => {
+        element.style.display =
+            lessons[i].title.toLowerCase().includes(query) ? "flex" : "none";
+    });
+}
+
+document.getElementById("searchInput").addEventListener("input", applySearch);
+
+document.querySelectorAll(".nav-item").forEach(item => {
+    item.addEventListener("click", () => {
+        document.querySelectorAll(".nav-item").forEach(nav => {
+            nav.classList.remove("active");
+        });
+
+        item.classList.add("active");
+    });
+});
+
+renderLessons();
+showLesson(0);
+</script>
+</body>
+</html>

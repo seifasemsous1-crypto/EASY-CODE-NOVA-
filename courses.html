@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Easy Code Nova | HTML Course</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <nav class="navbar">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-code"></i>
+            </span>
+            <span>Easy Code <b>Nova</b></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="basi.html">Home</a>
+            <a href="#courses" class="active">Courses</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="search-btn" id="searchToggle"
+                    aria-label="Search lessons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <a href="#courses" class="start-btn">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </nav>
+
+    <!-- PAGE LAYOUT -->
+    <div class="page-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="left-sidebar">
+
+            <p class="side-label">MENU</p>
+
+            <a href="#home" class="left-link">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="#projects" class="left-link">
+                <i class="fa-solid fa-folder"></i>
+                Projects
+            </a>
+
+            <a href="#profile" class="left-link">
+                <i class="fa-solid fa-user"></i>
+                My Profile
+            </a>
+
+            <div class="sidebar-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Keep Learning!</h3>
+                <p>Practice every day to improve your coding skills.</p>
+            </div>
+
+        </aside>
+
+        <!-- CENTER CONTENT -->
+        <main class="main-content" id="courses">
+
+            <div class="course-heading">
+                <div>
+                    <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+                    <h1>HTML Course</h1>
+                    <p class="heading-description">
+                        Learn HTML step by step and build your first webpage.
+                    </p>
+                </div>
+
+                <div class="course-badge">
+                    <i class="fa-brands fa-html5"></i>
+                    Beginner
+                </div>
+            </div>
+
+            <!-- LESSON CONTENT -->
+            <section class="lr">
+
+                <div class="lesson-top">
+                    <div>
+                        <p class="eyebrow">
+                            LESSON <span id="lessonNumber">1</span> OF 7
+                        </p>
+                        <h2 id="lessonHeading">Introduction to HTML</h2>
+                    </div>
+
+                    <span class="html-badge">HTML5</span>
+                </div>
+
+                <div class="lr1">
+
+                    <h2 id="lessonTitle">What is HTML?</h2>
+
+                    <p id="lessonDescription">
+                        HTML is the standard markup language used to create
+                        web pages. It provides the structure and content
+                        of a webpage.
+                    </p>
+
+                    <p id="lessonDescription2">
+                        HTML works with CSS and JavaScript to create
+                        attractive and interactive websites.
+                    </p>
+
+                    <!-- CODE AND PREVIEW -->
+                    <div class="main4">
+
+                        <!-- CODE BOX -->
+                        <div class="code-box">
+
+                            <div class="box-head">
+                                <span>
+                                    <i class="fa-solid fa-code"></i>
+                                    <span id="exampleTitle">
+                                        Example: A Simple HTML Page
+                                    </span>
+                                </span>
+
+                                <button class="copy-btn" id="copyBtn">
+                                    <i class="fa-regular fa-copy"></i>
+                                    Copy Code
+                                </button>
+                            </div>
+
+                            <pre class="code"><code id="codeBlock"></code></pre>
+
+                        </div>
+
+                        <!-- LIVE PREVIEW -->
+                        <div class="preview-box">
+
+                            <div class="box-head">
+                                <span>
+                                    <i class="fa-solid fa-eye"></i>
+                                    Live Preview
+                                </span>
+
+                                <span class="live-indicator">● Live</span>
+                            </div>
+
+                            <div class="browser">
+                                <div class="browser-bar">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green-dot"></span>
+
+                                    <div class="address">
+                                        <i class="fa-solid fa-lock"></i>
+                                        mywebsite.com
+                                    </div>
+                                </div>
+
+                                <iframe
+                                    id="livePreview"
+                                    title="HTML live preview"
+                                    sandbox=""
+                                    loading="eager">
+                                </iframe>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- HOW IT WORKS -->
+                    <div class="how">
+
+                        <h3>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            How It Works
+                        </h3>
+
+                        <ul id="explanationList">
+                            <li>The html tag defines the HTML document.</li>
+                            <li>The head tag contains page information.</li>
+                            <li>The body tag contains visible page content.</li>
+                        </ul>
+
+                    </div>
+
+                    <!-- PRACTICE EDITOR -->
+                    <div class="practice-box">
+
+                        <div class="practice-heading">
+                            <div>
+                                <h3>
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                    Try It Yourself
+                                </h3>
+                                <p>Edit the code and run your own example.</p>
+                            </div>
+
+                            <button class="run-btn" id="runBtn">
+                                <i class="fa-solid fa-play"></i>
+                                Run Code
+                            </button>
+                        </div>
+
+                        <textarea
+                            id="codeEditor"
+                            spellcheck="false"
+                            aria-label="HTML code editor"
+                            placeholder="Write your HTML code here..."></textarea>
+
+                        <iframe
+                            id="editorPreview"
+                            title="Your code result"
+                            sandbox="">
+                        </iframe>
+
+                    </div>
+
+                    <!-- LESSON ACTIONS -->
+                    <div class="lesson-actions">
+
+                        <button class="complete-btn" id="completeBtn">
+                            <i class="fa-solid fa-check"></i>
+                            Mark as Completed
+                        </button>
+
+                        <button class="next-btn" id="nextBtn">
+                            Next Lesson
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                <p>© 2026 Easy Code Nova. Keep learning, keep building.</p>
+            </footer>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-sidebar">
+
+            <div class="sidebar-heading">
+                <div class="book-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div>
+                    <h2>Course Content</h2>
+                    <p>7 Lessons · HTML Basics</p>
+                </div>
+            </div>
+
+            <div class="lesson-search" id="lessonSearchBox">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="lessonSearch"
+                       placeholder="Search lessons...">
+            </div>
+
+            <div class="right-lessons" id="rightLessons">
+
+                <button class="right-lesson active" data-lesson="0">
+                    <span class="lesson-number">01</span>
+                    <span class="lesson-name">Introduction to HTML</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+                <button class="right-lesson" data-lesson="1">
+                    <span class="lesson-number">02</span>
+                    <span class="lesson-name">HTML Document Structure</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+                <button class="right-lesson" data-lesson="2">
+                    <span class="lesson-number">03</span>
+                    <span class="lesson-name">Headings and Paragraphs</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+                <button class="right-lesson" data-lesson="3">
+                    <span class="lesson-number">04</span>
+                    <span class="lesson-name">Links and Images</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+                <button class="right-lesson" data-lesson="4">
+                    <span class="lesson-number">05</span>
+                    <span class="lesson-name">Lists and Buttons</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+                <button class="right-lesson" data-lesson="5">
+                    <span class="lesson-number">06</span>
+                    <span class="lesson-name">Input and Input Types</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+                <button class="right-lesson" data-lesson="6">
+                    <span class="lesson-number">07</span>
+                    <span class="lesson-name">Div and Navbar</span>
+                    <span class="lesson-status">○</span>
+                </button>
+
+            </div>
+
+            <div class="right-progress">
+                <div class="progress-heading">
+                    <h3>Your Progress</h3>
+                    <span id="progressPercent">0%</span>
+                </div>
+
+                <div class="right-progress-bar">
+                    <div id="rightProgressFill"></div>
+                </div>
+
+                <p id="rightProgressText">
+                    0 of 7 lessons completed
+                </p>
+            </div>
+
+            <div class="sidebar-note">
+                <i class="fa-solid fa-trophy"></i>
+                <div>
+                    <strong>Keep going!</strong>
+                    <p>Complete lessons to track your progress.</p>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+<script>
+/* ==================================
+   1. LESSON DATA
+================================== */
+
+const lessons = [
+    {
+        title: "Introduction to HTML",
+        heading: "What is HTML?",
+        description: "HTML (HyperText Markup Language) is the standard markup language used to create web pages. It provides the structure and content of a webpage.",
+        description2: "HTML works with CSS and JavaScript to create attractive and interactive websites.",
+        example: "A Simple HTML Page",
+
+        code: `<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Page</title>
+</head>
+<body>
+    <h1>Hello, Easy Code Nova!</h1>
+    <p>This is my first HTML page.</p>
+</body>
+</html>`,
+
+        explanation: [
+            "The html tag defines the HTML document.",
+            "The head tag contains information about the page.",
+            "The body tag contains the visible content."
+        ]
+    },
+
+    {
+        title: "HTML Document Structure",
+        heading: "HTML Document Structure",
+        description: "An HTML document has a structure that tells the browser how to display a webpage.",
+        description2: "The head contains information about the page, while the body contains the content users see.",
+        example: "HTML Document Structure",
+
+        code: `<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <h1>My Website</h1>
+    <p>Welcome to my website.</p>
+</body>
+</html>`,
+
+        explanation: [
+            "DOCTYPE tells the browser to use modern HTML.",
+            "The title tag defines the page title.",
+            "The body contains headings, paragraphs, images and other elements."
+        ]
+    },
+
+    {
+        title: "Headings and Paragraphs",
+        heading: "Headings and Paragraphs",
+        description: "HTML provides six heading levels, from h1 to h6, to organize information on a page.",
+        description2: "The p tag is used to write paragraphs and display blocks of text.",
+        example: "Headings and Paragraphs",
+
+        code: `<h1>Main Heading</h1>
+<h2>Subheading</h2>
+<h3>Another Heading</h3>
+
+<p>This is my first paragraph.</p>
+<p>This is my second paragraph.</p>`,
+
+        explanation: [
+            "The h1 tag is a main heading.",
+            "The h2 through h6 tags represent lower heading levels.",
+            "The p tag creates a paragraph."
+        ]
+    },
+
+    {
+        title: "Links and Images",
+        heading: "Links and Images",
+        description: "The a tag creates links to other pages and websites. The href attribute specifies the destination.",
+        description2: "The img tag displays an image. Its src attribute specifies the image location, and alt provides alternative text.",
+        example: "Links and Images",
+
+        code: `<h1>My Website</h1>
+
+<a href="https://example.com">
+    Visit Example
+</a>
+
+<br><br>
+
+<img
+    src="https://placehold.co/200x100"
+    alt="Example image"
+>`,
+
+        explanation: [
+            "The a tag creates a clickable link.",
+            "The href attribute defines where the link goes.",
+            "The img tag displays an image using its src attribute."
+        ]
+    },
+
+    {
+        title: "Lists and Buttons",
+        heading: "Lists and Buttons",
+        description: "The ul tag creates an unordered list, and each li tag represents an item in that list.",
+        description2: "The button tag creates a clickable button. Lists are useful for menus, navigation and organizing information.",
+        example: "Lists and Buttons",
+
+        code: `<h2>My Skills</h2>
+
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<button onclick="alert('Hello!')">
+    Click Me
+</button>`,
+
+        explanation: [
+            "The ul tag creates a bulleted list.",
+            "Each li tag creates one list item.",
+            "The button tag creates an interactive button."
+        ]
+    },
+
+    {
+        title: "Input and Input Types",
+        heading: "HTML Input and Input Types",
+        description: "The input tag lets users enter information into a form. Its type attribute controls the kind of input displayed.",
+        description2: "Common types include text, password, email, number, checkbox, radio, date and submit.",
+        example: "Different Input Types",
+
+        code: `<h2>Registration Form</h2>
+
+<form>
+    <label>Name:</label>
+    <input type="text"
+           placeholder="Your name">
+
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email"
+           placeholder="Your email">
+
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password"
+           placeholder="Password">
+
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" min="1">
+
+    <br><br>
+
+    <label>
+        <input type="checkbox">
+        I agree
+    </label>
+
+    <br><br>
+
+    <input type="submit" value="Register">
+</form>`,
+
+        explanation: [
+            "type=text creates a text field.",
+            "type=email and type=password are designed for email and password input.",
+            "checkbox, radio, number, date and submit provide other input behaviors."
+        ]
+    },
+
+    {
+        title: "Div and Navbar",
+        heading: "Div, Lists and Navbar",
+        description: "The div tag groups elements into a container. It is commonly used with CSS to organize layouts.",
+        description2: "A navbar is a navigation area. It often uses nav, ul, li and a tags to help visitors move between pages.",
+        example: "Navbar with Search Input",
+
+        code: `<nav class="navbar">
+    <div class="logo">
+        Easy Code Nova
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+
+    <div class="search">
+        <input
+            type="text"
+            placeholder="Search courses..."
+        >
+
+        <input type="button" value="Search">
+    </div>
+</nav>
+
+<div class="content">
+    <h1>Welcome!</h1>
+    <p>Learn HTML step by step.</p>
+</div>
+
+<style>
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        background: #10244a;
+        color: white;
+    }
+
+    .logo {
+        font-weight: bold;
+        color: #60a5fa;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .search {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .search input {
+        max-width: 100%;
+        padding: 7px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+</style>`,
+
+        explanation: [
+            "The div tag groups related HTML elements.",
+            "The nav tag identifies a navigation section.",
+            "The ul and li tags organize navigation links.",
+            "The input tag creates search fields and other form controls."
+        ]
+    }
+];
+
+
+/* ==================================
+   2. SELECT HTML ELEMENTS
+================================== */
+
+const lessonButtons = document.querySelectorAll(".right-lesson");
+
+const lessonHeading = document.getElementById("lessonHeading");
+const lessonNumber = document.getElementById("lessonNumber");
+const lessonTitle = document.getElementById("lessonTitle");
+
+const lessonDescription =
+    document.getElementById("lessonDescription");
+
+const lessonDescription2 =
+    document.getElementById("lessonDescription2");
+
+const exampleTitle = document.getElementById("exampleTitle");
+const codeBlock = document.getElementById("codeBlock");
+
+const livePreview = document.getElementById("livePreview");
+const codeEditor = document.getElementById("codeEditor");
+const editorPreview = document.getElementById("editorPreview");
+
+const completeBtn = document.getElementById("completeBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentLesson = 0;
+
+let completedLessons = new Set(
+    JSON.parse(localStorage.getItem("novaCompletedLessons") || "[]")
+);
+
+
+/* ==================================
+   3. RENDER LESSON CONTENT
+================================== */
+
+function openLesson(index) {
+    if (index < 0 || index >= lessons.length) {
+        return;
+    }
+
+    currentLesson = index;
+
+    const lesson = lessons[index];
+
+    lessonNumber.textContent = index + 1;
+    lessonHeading.textContent = lesson.title;
+    lessonTitle.textContent = lesson.heading;
+
+    lessonDescription.textContent = lesson.description;
+    lessonDescription2.textContent = lesson.description2;
+
+    exampleTitle.textContent = lesson.example;
+    codeBlock.textContent = lesson.code;
+
+    // Update the explanation list
+    const explanationList =
+        document.getElementById("explanationList");
+
+    explanationList.replaceChildren();
+
+    lesson.explanation.forEach(text => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        explanationList.appendChild(li);
+    });
+
+    // Highlight selected lesson
+    lessonButtons.forEach((button, i) => {
+        button.classList.toggle("active", i === index);
+
+        button.classList.toggle(
+            "completed",
+            completedLessons.has(i)
+        );
+
+        button.querySelector(".lesson-status").textContent =
+            completedLessons.has(i) ? "✓" : "○";
+    });
+
+    // Update completion button
+    updateCompleteButton();
+
+    // Show the lesson example
+    updateLivePreview(lesson.code);
+
+    // Put the example in the practice editor
+    codeEditor.value = lesson.code;
+
+    // Update course progress
+    updateCourseProgress();
+}
+
+
+/* ==================================
+   4. LIVE PREVIEW
+================================== */
+
+function updateLivePreview(code) {
+    livePreview.srcdoc = code;
+}
+
+
+/* ==================================
+   5. RUN PRACTICE CODE
+================================== */
+
+document.getElementById("runBtn").addEventListener(
+    "click",
+    function () {
+        editorPreview.srcdoc = codeEditor.value;
+    }
+);
+
+
+/* ==================================
+   6. COPY CODE
+================================== */
+
+document.getElementById("copyBtn").addEventListener(
+    "click",
+    async function () {
+        const code = lessons[currentLesson].code;
+
+        try {
+            await navigator.clipboard.writeText(code);
+
+            this.innerHTML =
+                '<i class="fa-solid fa-check"></i> Copied!';
+
+            setTimeout(() => {
+                this.innerHTML =
+                    '<i class="fa-regular fa-copy"></i> Copy Code';
+            }, 1500);
+
+        } catch (error) {
+            // Fallback for browsers that block clipboard access
+            codeEditor.value = code;
+            codeEditor.focus();
+            codeEditor.select();
+
+            alert("Select the code in the editor and copy it.");
+        }
+    }
+);
+
+
+/* ==================================
+   7. MARK LESSON COMPLETED
+================================== */
+
+function updateCompleteButton() {
+    const isCompleted = completedLessons.has(currentLesson);
+
+    completeBtn.classList.toggle("completed", isCompleted);
+
+    completeBtn.innerHTML = isCompleted
+        ? '<i class="fa-solid fa-check-double"></i> Completed'
+        : '<i class="fa-solid fa-check"></i> Mark as Completed';
+}
+
+completeBtn.addEventListener("click", function () {
+    if (completedLessons.has(currentLesson)) {
+        completedLessons.delete(currentLesson);
+    } else {
+        completedLessons.add(currentLesson);
+    }
+
+    localStorage.setItem(
+        "novaCompletedLessons",
+        JSON.stringify([...completedLessons])
+    );
+
+    openLesson(currentLesson);
+});
+
+
+/* ==================================
+   8. UPDATE PROGRESS BAR
+================================== */
+
+function updateCourseProgress() {
+    const total = lessons.length;
+    const completed = completedLessons.size;
+
+    const percent = Math.round((completed / total) * 100);
+
+    document.getElementById("rightProgressFill").style.width =
+        percent + "%";
+
+    document.getElementById("progressPercent").textContent =
+        percent + "%";
+
+    document.getElementById("rightProgressText").textContent =
+        `${completed} of ${total} lessons completed`;
+}
+
+
+/* ==================================
+   9. NEXT LESSON
+================================== */
+
+nextBtn.addEventListener("click", function () {
+    const next = (currentLesson + 1) % lessons.length;
+
+    openLesson(next);
+
+    document.querySelector(".lr").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+
+/* ==================================
+   10. SEARCH LESSONS
+================================== */
+
+const lessonSearch = document.getElementById("lessonSearch");
+
+lessonSearch.addEventListener("input", function () {
+    const query = this.value.trim().toLowerCase();
+
+    lessonButtons.forEach((button, index) => {
+        const title = lessons[index].title.toLowerCase();
+
+        button.style.display = title.includes(query)
+            ? "flex"
+            : "none";
+    });
+});
+
+
+/* ==================================
+   11. SEARCH BUTTON
+================================== */
+
+document.getElementById("searchToggle").addEventListener(
+    "click",
+    function () {
+        const searchBox = document.getElementById("lessonSearchBox");
+
+        searchBox.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        lessonSearch.focus();
+    }
+);
+
+
+/* ==================================
+   12. MOBILE NAVBAR
+================================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+});
+
+
+/* ==================================
+   13. LEFT NAVIGATION
+================================== */
+
+document.querySelectorAll(".left-link").forEach(link => {
+    link.addEventListener("click", function () {
+        document.querySelectorAll(".left-link").forEach(item => {
+            item.style.background = "";
+            item.style.color = "";
+        });
+
+        this.style.background = "#102751";
+        this.style.color = "#ffffff";
+    });
+});
+
+
+/* ==================================
+   14. START APP
+================================== */
+
+// Open the first lesson when the page loads
+openLesson(0);
+
+// Initialize the practice preview
+editorPreview.srcdoc = lessons[0].code;
+</script>
+    <script src="main.js"></script>
+
+</body>
+</html>
